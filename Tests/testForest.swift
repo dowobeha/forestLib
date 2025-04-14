@@ -15,7 +15,7 @@ struct TestForest {
   @Test
   func tree() async throws {
     let tree = Tree(.Oak)
-    #expect(tree.kind == TreeKind.Oak)
+    #expect(tree.getKind() == TreeKind.Oak)
   }
 
 }
