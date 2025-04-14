@@ -1,4 +1,4 @@
-#include "include/forest.h++"
+#include "include/forest.h"
 
 Tree::Tree(TreeKind kind) : kind{kind}
 {
