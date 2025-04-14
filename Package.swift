@@ -15,7 +15,7 @@ let package = Package(
     // Each target contains a set of source files that Swift Package Manager compiles into a module or test suite.
     targets: [
       
-      Target.target(name: "someTrees", dependencies: ["forestLib"]),
+      Target.target(name: "someTrees", dependencies: ["forestLib"], swiftSettings: [linkWithCxx]),
       
       Target.target(name: "forestLib", swiftSettings: [linkWithCxx]),
       
