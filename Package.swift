@@ -9,11 +9,13 @@ let package = Package(
     
     // Each product is an externally visible build artifact that’s available to clients of a package.
     products: [
-      Product.library(name: "forestLib", targets: ["forestLib"])
+      Product.library(name: "someTrees", targets: ["someTrees"])
     ],
     
     // Each target contains a set of source files that Swift Package Manager compiles into a module or test suite.
     targets: [
+      
+      Target.target(name: "someTrees", dependencies: ["forestLib"]),
       
       Target.target(name: "forestLib", swiftSettings: [linkWithCxx]),
       
