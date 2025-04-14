@@ -2,6 +2,7 @@
 
 Tree::Tree(TreeKind kind) : kind{kind}
 {
+  // This space intentionally left blank
 }
 
 TreeKind Tree::getKind() const
