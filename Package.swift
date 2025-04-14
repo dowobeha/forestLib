@@ -2,8 +2,6 @@
 
 import PackageDescription
 
-let useCpp20 = CXXSetting.unsafeFlags(["-std=c++20"])
-
 let linkWithCxx = SwiftSetting.interoperabilityMode(SwiftSetting.InteroperabilityMode.Cxx)
 
 let package = Package(
@@ -17,11 +15,13 @@ let package = Package(
     // Each target contains a set of source files that Swift Package Manager compiles into a module or test suite.
     targets: [
       
-      Target.target(name: "forestLib", cxxSettings: [useCpp20], swiftSettings: [linkWithCxx]),
+      Target.target(name: "forestLib", swiftSettings: [linkWithCxx]),
       
       Target.testTarget(name: "forestLibTests" ,
                         dependencies: ["forestLib"],
                         swiftSettings: [linkWithCxx])
-    ]
+    ],
+    
+    cxxLanguageStandard: .cxx20
 )
 
